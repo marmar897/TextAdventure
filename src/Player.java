@@ -20,7 +20,7 @@ public class Player extends CreatureClass {
     }
 
     public void heal(){
-        hitPoints = hitPoints + healAmount;
+        this.hitPoints = hitPoints + healAmount;
         System.out.println(getName() + " has healed by " + healAmount );
         System.out.println( "HP is now" + hitPoints );
     }

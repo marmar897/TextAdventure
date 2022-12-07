@@ -6,16 +6,14 @@ public class Room {
     public Room(){
         roomIndex = 0; 
         description = "";
+        monster = null;
     }
 
-    public Room (int roomIndex, String description, Monster monter){
+    public Room (int roomIndex, String description, Monster monster){
         this.roomIndex = roomIndex;
         this.description = description;
         this.monster = monster;  
     }
-
-
-
 
 
 }
