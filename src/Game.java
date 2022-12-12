@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Game{
@@ -7,9 +9,13 @@ public class Game{
     public Dungeon Room[];
 
     public Game() throws FileNotFoundException{
+        //getting errors with reading from a txt file. and printing ?
+
         Room[] dungeon = new Room[0];
         File file = new File("/Users/marmar897/Desktop/Java /1st project/textAdventureGame/file_playerInfo.txt");
         Scanner scan = new Scanner(file);
+        PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
+        System.setOut(out);
 
         //creates player1 
         while(scan.hasNext()){
@@ -21,7 +27,9 @@ public class Game{
             int healAmount = scan.nextInt();
 
             Player p1 = new Player(name,description,hitPoints,damage,healAmount);
-            System.out.println(p1.toString());
+          //  System.out.println(p1.toString());
+            String p1String = p1.toString();
+            out.println(p1String);
         }
 
         //constuct 3 monsters:)
@@ -43,8 +51,6 @@ public class Game{
     public void play(){
         
     }
-
-
 
     public static void main(String[] args) throws Exception {
         Game();
